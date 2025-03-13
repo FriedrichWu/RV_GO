@@ -1,4 +1,4 @@
-module regfile(
+module regfile (
   input         clk,
   // READ PORT 1
   input  [ 4:0] raddr1,
@@ -7,7 +7,7 @@ module regfile(
   input  [ 4:0] raddr2,
   output [31:0] rdata2,
   // WRITE PORT
-  input         we,       //write enable, HIGH valid
+  input         we,       // write enable, HIGH valid
   input  [ 4:0] waddr,
   input  [31:0] wdata
 );

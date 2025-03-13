@@ -1,7 +1,7 @@
-module barrel_shifter(
+module barrel_shifter (
   input      [31:0] din,
-  input             l_r, //left or right shift
-  input             a_l, //arithmetic or logic shift
+  input             l_r, // left or right shift
+  input             a_l, // arithmetic or logic shift
   input      [ 4:0] shamt,
   output reg [31:0] dout
 );
