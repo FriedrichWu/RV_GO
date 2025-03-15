@@ -1,5 +1,5 @@
 module branch_con (
-  input      [3:0] branch,
+  input      [2:0] branch,
   input            less,
   input            zero,
   output reg       pc_src_a,

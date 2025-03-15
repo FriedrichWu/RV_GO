@@ -21,7 +21,7 @@ always @(*) begin
   branch     = 3'b000;
   mem_to_reg = 1'b0;
   mem_w      = 1'b0;
-  mem_op     = 1'b0;
+  mem_op     = 3'b000;
   alu_src_a  = 1'b0;
   alu_src_b  = 2'b00;
   alu_ctr    = 4'b0000;
@@ -130,7 +130,7 @@ always @(*) begin
       branch     = 3'b000;
       mem_to_reg = 1'b0;
       mem_w      = 1'b0;
-      mem_op     = 1'b0;
+      mem_op     = 3'b000;
       alu_src_a  = 1'b0;
       alu_src_b  = 2'b00;
       alu_ctr    = 4'b0000;
