@@ -3,6 +3,7 @@ module rv_go_core (
   input         rst,
   input  [31:0] instr,
   input  [31:0] data_from_ram,
+  output [31:0] alu_result,
   output [31:0] data_to_ram,
   output [31:0] nxt_pc,
   output [ 2:0] mem_op,
@@ -56,7 +57,7 @@ alu alu_ins (
   .b          (b          ),
   .less       (less       ),
   .zero       (zero       ),
-  .alu_out    (data_to_ram)
+  .alu_out    (alu_result )
 );
 
 //MUX at b port of alu
@@ -85,14 +86,16 @@ assign a = alu_src_a ? pc : rs1;
 assign nxt_pc = (pc_src_a ? imm : 32'd4) + (pc_src_b ? rs1 : pc);
 
 //MUX for write back to regfile
+assign data_to_reg = mem_to_reg ? data_from_ram : alu_result;
 
-assign data_to_reg = mem_to_reg ? data_from_ram : data_to_ram;
+//Connect to datain port of data ram
+assign data_to_ram = rs2;
 
 //---------------------------------------//
 //CONTROL PATH
 //---------------------------------------//
 imm_gen imm_gen_ins (
-  .instr      (instr[31:7]),
+  .instr      (instr      ),
   .ext_op     (ext_op     ),
   .imm        (imm        )
 );

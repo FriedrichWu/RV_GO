@@ -1,5 +1,5 @@
 module imm_gen (
-  input      [24:0] instr,
+  input      [31:0] instr,
   input      [ 2:0] ext_op,
   output reg [31:0] imm
 );

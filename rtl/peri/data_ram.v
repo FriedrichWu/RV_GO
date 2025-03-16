@@ -42,7 +42,7 @@ always @(*) begin
     end
   endcase
 end
-sky130_sram_2kbyte_1rw1r_32x512_8 data_ram_ins (
+sky130_sram_2kbyte_1rw1r_32x512_8 sram_ins_data (
   .clk0        (clk0     ),
   .csb0        (1'b0     ),
   .web0        (wen_n    ),

@@ -6,7 +6,7 @@ module inst_ram (
 //----------------------------------------------//
 //INTERNAL SIGNAL
 //----------------------------------------------//
-sky130_sram_2kbyte_1rw1r_32x512_8 inst_ram_ins (
+sky130_sram_2kbyte_1rw1r_32x512_8 sram_ins_inst (
   .clk0        (),
   .csb0        (),
   .web0        (),
