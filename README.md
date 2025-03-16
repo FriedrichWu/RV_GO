@@ -9,6 +9,7 @@ This is a RV32I 5-stage in-order pipelined CPU, aiming at covering all the digit
 - Add AXI4 Bus
 - Support interupt
 - Add more peris: JTAG, UART, I2C, SPI
+- Add scan-chain for DFT purpose
 ## Documentation
 wait to add
 ## Reference
