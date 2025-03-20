@@ -1,17 +1,17 @@
 module data_ram (
-  input         clk0,
-  input         wen_n,
-  input  [ 2:0] mem_op,
-  input  [31:0] addr,
-  input  [31:0] din,
-  input         clk1,
-  output [31:0] dout
+  input             clk0,
+  input             wen_n,
+  input      [ 2:0] mem_op,
+  input      [31:0] addr,
+  input      [31:0] din,
+  input             clk1,
+  output reg [31:0] dout
 );
 //----------------------------------------------//
 //INTERNAL SIGNAL
 //----------------------------------------------//
-reg [ 3:0] wmask0;
-reg [31:0] dout1;
+reg  [ 3:0] wmask0;
+wire [31:0] dout1;
 //Decode memory option
 always @(*) begin
   wmask0 = 4'b0000;

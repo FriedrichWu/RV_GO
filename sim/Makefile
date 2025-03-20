@@ -11,11 +11,11 @@ VERILOG_SOURCES += $(PWD)/../rtl/peri/*.v
 # testbench (instances)
 VERILOG_SOURCES += $(PWD)/tb.v
 
-# COCOTB_TOPLEVEL is the name of the toplevel module in your Verilog or VHDL file
-COCOTB_TOPLEVEL = tb
+# TOPLEVEL is the name of the toplevel module in your Verilog or VHDL file
+TOPLEVEL = tb
 
-# COCOTB_TEST_MODULES is the basename of the Python test file(s)
-COCOTB_TEST_MODULES = test
+# MODULE is the basename of the Python test file(s)
+MODULE = test
 
 # include cocotb's make rules to take care of the simulator setup
 include $(shell cocotb-config --makefiles)/Makefile.sim

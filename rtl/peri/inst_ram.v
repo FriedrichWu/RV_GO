@@ -14,10 +14,10 @@ sky130_sram_2kbyte_1rw1r_32x512_8 sram_ins_inst (
   .addr0       (),
   .din0        (),
   .dout0       (),
-  .clk1        (clk1     ),
-  .csb1        (1'b0     ),
-  .addr1       (addr[8:0]),
-  .dout1       (instr    )
+  .clk1        (clk1      ),
+  .csb1        (1'b0      ),
+  .addr1       (addr1[8:0]),
+  .dout1       (instr     )
 );
     
 endmodule

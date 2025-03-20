@@ -3,7 +3,9 @@ from cocotb.clock import Clock
 from cocotb.triggers import ClockCycles, FallingEdge, Timer
 from cocotb.utils import get_sim_time
 import random
-
+@cocotb.test()
+async def test_basic(dut):
+    dut._log.info("Running a basic test")
 # --- TEST CYCLE ---
 @cocotb.test(timeout_time=50, timeout_unit='sec')
 async def run_smoke_case_cpu(dut):
@@ -27,5 +29,8 @@ async def reset_project(dut):
 
 async def smoke_case_cpu(dut):
     dut.inst_ram_ins.sram_ins_inst.mem[0].value = 0x06400313
+    await ClockCycles(dut.clk, 40)
+    assert dut.rst.value == 0
+
     
     
